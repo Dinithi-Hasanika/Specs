@@ -1,0 +1,30 @@
+<div>
+  <form class="navbar-form ">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search" />
+    </div>
+    &nbsp;
+    <button type="submit" class="btn btn-success">
+      Submit
+    </button>
+    &nbsp; &nbsp; &nbsp;
+    <select
+      selected
+      (change)="setTopic($event.target.value)"
+      name="topi"
+      id="topi"
+      style="width: 200px; height: 30px; padding-left: 30px ; background-color: mediumseagreen; color: white;"
+    >
+      <option hidden [value]="" selected>Select</option>
+      <option [value]="policy.topic" *ngFor="let policy of topics">{{
+        policy.topic
+      }}</option>
+    </select>
+  </form>
+  <div style="padding-left: 30px;">
+    <app-forum-question-list
+      *ngIf="baseTopic"
+      [selectedTopic]="baseTopic"
+    ></app-forum-question-list>
+  </div>
+</div>

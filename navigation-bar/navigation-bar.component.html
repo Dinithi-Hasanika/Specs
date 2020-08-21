@@ -1,0 +1,114 @@
+<nav class="navbar navbar-default" style="background-color: teal;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a
+        class="navbar-brand"
+        href="frontpage"
+        style="color: white;"
+        *ngIf="!user"
+        >Specs</a
+      >
+    </div>
+
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="home" style="color: white;" *ngIf="user"
+        >SpecMedical</a
+      >
+    </div>
+
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" *ngIf="user" href="home" style="color: white;"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ user?.displayName }}</a
+      >
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a
+            href="messagebyadmin"
+            *ngIf="user?.displayName === 'Admin'"
+            style="color: white;"
+            >Message</a
+          >
+        </li>
+        <li>
+          <a
+            href="approve"
+            *ngIf="user?.displayName === 'Admin'"
+            style="color: white;"
+            >Approve</a
+          >
+        </li>
+        <li>
+          <a
+            href="messagebymember"
+            *ngIf="user && user?.displayName != 'Admin'"
+            style="color: white;"
+            >Message</a
+          >
+        </li>
+        <li>
+          <a href="addnewtopic" *ngIf="user" style="color: white;">Add</a>
+        </li>
+        <li><a href="login" *ngIf="!user" style="color: white;">Log In</a></li>
+        <li>
+          <a href="registration" *ngIf="!user" style="color: white;"
+            >Registration</a
+          >
+        </li>
+        <li><a href="membership" style="color: white;">Membership</a></li>
+        <li><a href="about" style="color: white;">About Us </a></li>
+        <li>
+          <a
+            href="frontpage"
+            style="color: white;"
+            *ngIf="user"
+            (click)="logout()"
+            >Log Out
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,19 @@
+<div style="padding-left: 20px;">
+  <div class="card" style="width: 100rem; background-color: lightgray; ">
+    <div class="card-body" style="padding-left: 8px; padding-top: 6px;">
+      <h3 class="card-title" style="color: teal;">
+        {{ msg.message }}
+      </h3>
+      <h4
+        class="card-subtitle mb-2 text-muted"
+        style="color: black;"
+        *ngIf="msg.replied; else fail"
+      >
+        {{ msg.reply }} - By Admin
+      </h4>
+      <ng-template #fail>
+        <h5 style="color: black;">Admin will reply soon</h5>
+      </ng-template>
+    </div>
+  </div>
+</div>
