@@ -1,0 +1,9 @@
+<div>
+  <h2 style="color: teal;font-weight:bolder ; padding-left: 20px;">
+    Approve or Delete or Answer Questions
+  </h2>
+  <app-approve-questions-item
+    *ngFor="let newQuestion of questions"
+    [newQuestion]="newQuestion"
+  ></app-approve-questions-item>
+</div>

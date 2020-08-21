@@ -1,0 +1,14 @@
+<div style="padding-left: 20px;">
+  <div class="card" style="width: 35rem; background-color: lightgray; ">
+    <div class="card-body" style="padding-left: 5px;">
+      <h3 class="card-title">
+        {{ newTopic.topic }}
+      </h3>
+      <h4 class="card-subtitle mb-2 text-muted">By {{ newTopic.createdBy }}</h4>
+
+      <button class="btn btn-success" (click)="onApprove()">APPROVE</button>
+      &nbsp;&nbsp;&nbsp;
+      <button class="btn btn-success" (click)="onRemove()">REMOVE</button>
+    </div>
+  </div>
+</div>

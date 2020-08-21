@@ -1,0 +1,11 @@
+<div>
+  <h2 style="color: teal;font-weight:bolder ; padding-left: 20px;">
+    Approve or Delete Topics
+  </h2>
+  <app-approve-topics-item
+    *ngFor="let newTopic of topics"
+    [newTopic]="newTopic"
+    (approveSelected)="approveSelect(newTopic)"
+    (removeSelected)="removeSelect(newTopic)"
+  ></app-approve-topics-item>
+</div>
