@@ -1,0 +1,69 @@
+<div style="padding-left: 20px;">
+  <div class="card" style="width: 100rem; background-color: lightgray; ">
+    <div class="card-body" style="padding-left: 5px;">
+      <h3 class="card-title " style="color: teal;">
+        {{ newQuestion.question }}
+      </h3>
+      <h4 class="card-subtitle mb-2 text-muted" style="color:black">
+        By {{ newQuestion.questionBy }}
+      </h4>
+
+      <button class="btn btn-success" (click)="onAnswer()">ANSWER</button>
+      <br />
+      <br />
+
+      <div *ngIf="act">
+        <form
+          #addAnswerForm="ngForm"
+          (ngSubmit)="addAnswer(addAnswerForm)"
+          class="form-horizontal"
+          role="form"
+          AUTOCOMPLETE="off"
+        >
+          <div class="form-group">
+            <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
+            <div
+              class="col-sm-3 col-md-3 col-lg-4 col-xs-10 mobileLabel"
+              style=" padding-top: 7px; text-align: right;"
+            >
+              Answer :
+            </div>
+
+            <div
+              class="col-sm-7 col-md-7 col-lg-6 col-xs-9 input-group mobilePad"
+              style="font-weight:600;"
+            >
+              <input
+                style="border-radius: 4px!important;"
+                type="text"
+                class="form-control"
+                name="answer"
+                id="answer"
+                ngModel
+                #answer="ngModel"
+              />
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
+            <div
+              class="col-sm-11 col-md-11 col-lg-11 col-xs-10"
+              style="text-align:center;"
+            >
+              <button id="addAnswer" type="submit" class="btn btn-success">
+                ADD
+              </button>
+            </div>
+
+            <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
+          </div>
+        </form>
+      </div>
+      <app-forum-answer-item
+        *ngFor="let newAnswer of answers"
+        [newAnswer]="newAnswer"
+      ></app-forum-answer-item>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div
+  style="height: 100vh;
+
+display: flex;"
+>
+  <div style="width: 50%;">
+    <div
+      style="text-align: center;  font-weight: bolder; font-size: 60px; color: teal;"
+    >
+      <p>SpecMedical</p>
+    </div>
+    <div
+      style="text-align: center;  font-weight: bolder; font-size: 40px; color: teal;"
+    >
+      <p>A Medical</p>
+      <p>Fellowship book</p>
+      <p>For RFPGA</p>
+      <br />
+    </div>
+  </div>
+  <div
+    style="width: 50%; padding: 25px 40px; 
+  "
+  >
+    <form class="navbar-form ">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" />
+      </div>
+      &nbsp;
+      <button type="submit" class="btn btn-success" (click)="onAct()">
+        Submit
+      </button>
+    </form>
+    <form>
+      <br />
+      <br />
+      <br />
+      <div class="form-group">
+        <select
+          (click)="onAct()"
+          name="topi"
+          id="topi"
+          style="width: 200px; height: 30px; padding-left: 30px ; background-color: mediumseagreen; color: white;"
+          ><option hidden [value]="" selected>Select</option>
+          <option [value]="policy" *ngFor="let policy of topics">{{
+            policy.topic
+          }}</option>
+        </select>
+      </div>
+    </form>
+    <div class="row" *ngIf="act">
+      <div class="col-12 alert alert-danger">
+        Please Register as a Member
+      </div>
+    </div>
+  </div>
+</div>

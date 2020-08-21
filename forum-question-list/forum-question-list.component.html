@@ -1,0 +1,11 @@
+<div>
+  <p
+    style="text-align: center;  font-weight: bolder; font-size: 60px; color: teal;"
+  >
+    {{ selectedTopic }}
+  </p>
+  <app-forum-question-item
+    *ngFor="let newQuestion of questions"
+    [newQuestion]="newQuestion"
+  ></app-forum-question-item>
+</div>
